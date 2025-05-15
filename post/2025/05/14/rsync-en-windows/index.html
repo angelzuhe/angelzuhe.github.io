@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A simple, minimal blog for those who love text.">
+    <title>Rsync en Windows | Home</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="https://example.com/css/theme-override.css">
+    
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          
+          
+          <li class="pull-left ">
+            <a href="https://example.com/">~/home</a>
+          </li>
+          
+          
+          <li class="pull-left ">
+            <a href="/categories/">~/categorias</a>
+          </li>
+          
+          
+          <li class="pull-left ">
+            <a href="/tags/">~/tags</a>
+          </li>
+          
+
+          
+          
+          <li class="pull-right">
+            <a href="/index.xml">~/suscribete</a>
+          </li>
+          
+
+        </ul>
+      </nav>
+    </header>
+
+
+<div class="article-meta">
+<h1><span class="title">Rsync en Windows</span></h1>
+
+<h2 class="date">2025/05/14</h2>
+<p class="terms">
+  
+  
+  
+  
+  
+</p>
+</div>
+
+
+
+<div class="content-wrapper">
+  <main>
+    <h3 id="instalar-rsync-en-windows-10">Instalar Rsync en Windows 10</h3>
+<p><strong>Rsync</strong> es una herramienta de linea de comandos utilizada para sincronizar archivos y directorios
+entre sistemas, tanto locales como remotos.</p>
+<ul>
+<li>Puede usar <strong>rsync</strong> atravez de un protocolo SSH.</li>
+<li>Realiza copias incrementales, solo transfiere aquellos ficheros que han sufrido cambios.</li>
+<li>Realiza copias de seguridad de ficheros y directorios de forma recursiva.</li>
+</ul>
+<p><strong>Rsync</strong> es una herramienta que ya viene preinstalada en sistemas operativos tipo unix; Linux y MacOS, para Windows se puede usar una adaptación de <strong>rsync</strong> que se llama <strong>DeltaCopy</strong>. Aquí vamos a usar WSL (Windows Subsystem for Linux) y apartir de aquí hacer la instalación de <strong>rsync</strong>.</p>
+<h3 id="activar-wsl">Activar WSL</h3>
+<p>Tan sólo hay que ir a: &laquo;panel de control&raquo; &ndash;&gt; &laquo;Agregar o quitar programas&raquo; &ndash;&gt; &laquo;Activar o desactivar características de Windows&raquo;  y aquí activar el checkbox &ldquo;Subsistema de Windows para Linux&rdquo;.</p>
+<p><img src="/images/wsl.png" alt="alt"></p>
+<p>El paso siguiente es instalar el Sistema Linux, desde la tienda de Microsoft hay varias disponibles.
+Se encuentra distribuciones GNU/Linux, como: <strong>Debian GNU/Linux</strong>, <strong>Kali Linux</strong> y <strong>Ubuntu Linux</strong>, entre otras.</p>
+<p>Yo uso Debian por lo tanto es la que he instalado. Anque esto no es superficial ya que tanto Kali Linux como Ubuntu estan basadas en GNU/Linux Debian.</p>
+<p>Una vez instalada WSL Debian aparece como cualquier otra aplicación disponible en el menu de inicio, o ejecuta este comando en la consola &laquo;cmd&raquo;: <strong>wsl -d Debian</strong></p>
+<p>Así esta mi consola:
+<img src="/images/terminal1.png" alt="alt"></p>
+<p>No veras lo mismo, pero sí algo parecido en el prompt. He personalizado el prompt con: Oh-My-Bash!!</p>
+<p><img src="/images/terminal2.png" alt="alt">
+Lo importante ahora es actualizar la lista de paquetes de la distribución y enseguida actualizar dichos paquetes, que se deban actualizar. Normalmente esto es lo que siempre debe hacerse al iniciar un Sistema GNU/Linux recien instalado, aquí solo tenemos un sistema base, es decir, no tenemos interfaz grafica pero merece la pena actualizar la distribución.</p>
+<h3 id="actualizando-paquetes-de-debian-gnulinux">Actualizando paquetes de Debian GNU/Linux</h3>
+<p><strong>sudo apt update</strong>: Solo descarga la lista de paquetes que se deben actualizar. Y &hellip;</p>
+<p><strong>sudo apt upgrade</strong>: Descarga e instala los paquetes que merecen actualización, el parametro -y solo es para que no pregunte nada mientras hace este proceso. Es como dar consentimiento de que todo sea &ldquo;yes&rdquo; sí instalalo.</p>
+<p><img src="/images/update_upgrade.png" alt="alt"></p>
+<h3 id="ahora-sí-instalamos-rsync">Ahora sí, instalamos rsync</h3>
+<p>Ejecutamos el siguiente comando en la terminal:</p>
+<p><img src="/images/rsync.png" alt="alt"></p>
+<p>Podemos verificar la version de <strong>rsync</strong>, para que asegurarnos que ya esta en el sistema.</p>
+<p><img src="/images/rsyncversion.png" alt="alt"></p>
+
+    <a href="/"> >> Home</a>
+  </main>
+</div>
+    <footer>
+      
+      
+      <script>
+      (function() {
+        function center_el(tagName) {
+          var tags = document.getElementsByTagName(tagName), i, tag;
+          for (i = 0; i < tags.length; i++) {
+            tag = tags[i];
+            var parent = tag.parentElement;
+            
+            if (parent.childNodes.length === 1) {
+              
+              if (parent.nodeName === 'A') {
+                parent = parent.parentElement;
+                if (parent.childNodes.length != 1) continue;
+              }
+              if (parent.nodeName === 'P') parent.style.textAlign = 'center';
+            }
+          }
+        }
+        var tagNames = ['img', 'embed', 'object'];
+        for (var i = 0; i < tagNames.length; i++) {
+          center_el(tagNames[i]);
+        }
+      })();
+      </script>
+
+      
+      <hr/>
+      Open-Source | <a href="https://github.com/goodroot/hugo-classic">Github</a> | <a href="https://keybase.io/goodroot">Keybase</a>
+      
+    </footer>
+  </body>
+</html>
+
